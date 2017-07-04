@@ -151,7 +151,8 @@ webpackJsonp([3],{
 	  _react2.default.createElement(_rcColorPicker2.default, {
 	    color: '#0F0',
 	    onChange: changeHandler,
-	    placement: 'bottomRight'
+	    placement: 'bottomRight',
+	    enableSystemPicker: false
 	  })
 	), document.getElementById('__react-content'));
 

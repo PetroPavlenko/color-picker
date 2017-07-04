@@ -21999,6 +21999,7 @@
 	    // const state = this.state;
 	    return _react2.default.createElement(_Panel2.default, {
 	      ref: this.savePickerPanelRef,
+	      enableSystemPicker: this.props.enableSystemPicker,
 	      defaultColor: this.state.color,
 	      alpha: this.state.alpha,
 	      enableAlpha: this.props.enableAlpha,
@@ -22092,6 +22093,7 @@
 	
 	
 	ColorPicker.propTypes = {
+	  enableSystemPicker: _propTypes2.default.bool,
 	  defaultColor: _propTypes2.default.string,
 	  defaultAlpha: _propTypes2.default.number,
 	  // can custom
@@ -22110,6 +22112,7 @@
 	};
 	
 	ColorPicker.defaultProps = {
+	  enableSystemPicker: true,
 	  defaultColor: '#F00',
 	  defaultAlpha: 100,
 	  onChange: function onChange() {},
@@ -28392,7 +28395,8 @@
 	              alpha: alpha,
 	              onChange: this.onChange,
 	              onInputClick: this.onSystemColorPickerOpen,
-	              hsv: hsv
+	              hsv: hsv,
+	              enableSystemPicker: this.props.enableSystemPicker
 	            })
 	          )
 	        ),
@@ -28420,6 +28424,7 @@
 	
 	
 	Panel.propTypes = {
+	  enableSystemPicker: _propTypes2.default.bool,
 	  alpha: _propTypes2.default.number,
 	  className: _propTypes2.default.string,
 	  color: _validationColor2.default,
@@ -29379,7 +29384,7 @@
 	          backgroundColor: hex,
 	          opacity: this.props.alpha / 100 }
 	      }),
-	      _react2.default.createElement('input', {
+	      this.props.enableSystemPicker && _react2.default.createElement('input', {
 	        type: 'color',
 	        value: hex,
 	        onChange: this.onChange.bind(this),
@@ -29395,6 +29400,7 @@
 	
 	
 	Preview.propTypes = {
+	  enableSystemPicker: _propTypes2.default.bool,
 	  rootPrefixCls: _propTypes2.default.string,
 	  hsv: _propTypes2.default.object,
 	  alpha: _propTypes2.default.number,
