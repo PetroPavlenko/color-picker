@@ -55,6 +55,8 @@ ReactDOM.render(
       color={'#0F0'}
       onChange={changeHandler}
       placement="bottomRight"
+      enableSystemPicker={false}
+      disableModeChange="true"
     />
   </div>,
   document.getElementById('__react-content')

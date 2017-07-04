@@ -122,7 +122,9 @@ export default class ColorPicker extends React.Component {
     // const state = this.state;
     return (
       <ColorPickerPanel
+
         ref={this.savePickerPanelRef}
+        enableSystemPicker={this.props.enableSystemPicker}
         defaultColor={this.state.color}
         alpha={this.state.alpha}
         enableAlpha={this.props.enableAlpha}
@@ -130,6 +132,7 @@ export default class ColorPicker extends React.Component {
         onChange={this.onChange}
         onBlur={this.onBlur}
         mode={this.props.mode}
+        disableModeChange={this.props.disableModeChange}
         className={this.props.className}
       />
     );
@@ -211,6 +214,8 @@ export default class ColorPicker extends React.Component {
 }
 
 ColorPicker.propTypes = {
+  disableModeChange: PropTypes.bool,
+  enableSystemPicker: PropTypes.bool,
   defaultColor: PropTypes.string,
   defaultAlpha: PropTypes.number,
   // can custom
@@ -229,6 +234,8 @@ ColorPicker.propTypes = {
 };
 
 ColorPicker.defaultProps = {
+  disableModeChange: false,
+  enableSystemPicker: true,
   defaultColor: '#F00',
   defaultAlpha: 100,
   onChange() {

@@ -69,6 +69,9 @@ export default class Params extends React.Component {
   }
 
   onModeChange() {
+    if (this.props.disableModeChange) {
+      return;
+    }
     let mode = this.state.mode;
     const modeIndex = (modesMap.indexOf(mode) + 1) % modesMap.length;
     const state = this.state;
@@ -235,6 +238,7 @@ export default class Params extends React.Component {
 }
 
 Params.propTypes = {
+  disableModeChange: PropTypes.bool,
   alpha: PropTypes.number,
   enableAlpha: PropTypes.bool,
   hsv: PropTypes.object,

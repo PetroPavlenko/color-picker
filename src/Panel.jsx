@@ -174,6 +174,7 @@ export default class Panel extends React.Component {
                 onChange={this.onChange}
                 onInputClick={this.onSystemColorPickerOpen}
                 hsv={hsv}
+                enableSystemPicker={this.props.enableSystemPicker}
               />
             </div>
           </div>
@@ -186,6 +187,7 @@ export default class Panel extends React.Component {
               onChange={this.onChange}
               mode={this.props.mode}
               enableAlpha={this.props.enableAlpha}
+              disableModeChange={this.props.disableModeChange}
             />
           </div>
         </div>
@@ -197,6 +199,8 @@ export default class Panel extends React.Component {
 import typeColor from './utils/validationColor';
 
 Panel.propTypes = {
+  disableModeChange: PropTypes.bool,
+  enableSystemPicker: PropTypes.bool,
   alpha: PropTypes.number,
   className: PropTypes.string,
   color: typeColor,

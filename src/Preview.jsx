@@ -25,18 +25,19 @@ export default class Preview extends React.Component {
           backgroundColor: hex,
           opacity: this.props.alpha / 100 }}
         />
-        <input
+        {this.props.enableSystemPicker && <input
           type="color"
           value={hex}
           onChange={this.onChange.bind(this)}
           onClick={this.props.onInputClick}
-        />
+        />}
       </div>
     );
   }
 }
 
 Preview.propTypes = {
+  enableSystemPicker: PropTypes.bool,
   rootPrefixCls: PropTypes.string,
   hsv: PropTypes.object,
   alpha: PropTypes.number,

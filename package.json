@@ -2,7 +2,7 @@
   "name": "rc-color-picker",
   "version": "1.1.7",
   "description": "color-picker ui component for react",
-  "main": "./lib/index.js",
+  "main": "./index.js",
   "keywords": [
     "react",
     "react-component",
@@ -21,7 +21,8 @@
   "files": [
     "lib/",
     "assets/*.css",
-    "dist/"
+    "dist/",
+    "src/"
   ],
   "config": {
     "port": 8010
@@ -35,6 +36,7 @@
   "style": "./assets/index.css",
   "scripts": {
     "build": "rc-tools run build",
+    "build-ex": "npm run build && open ./build/examples/simple.html",
     "gh-pages": "rc-tools run gh-pages",
     "start": "rc-tools run server",
     "pub": "rc-tools run pub",
